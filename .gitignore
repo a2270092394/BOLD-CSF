@@ -1,0 +1,20 @@
+# MATLAB temporary files
+*.asv
+
+# Large neuroimaging files
+*.nii
+*.nii.gz
+*.mgz
+*.img
+*.hdr
+
+# Outputs
+*.xlsx
+*.tif
+*.png
+*.jpg
+*.mat
+
+# OS files
+.DS_Store
+Thumbs.db
