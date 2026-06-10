@@ -102,15 +102,3 @@ Outputs include:
 - `all_derivative_ccfs.xlsx`
 
 These derivative-based outputs are intended for auxiliary methodological validation only and are not part of the primary statistical analyses.
-
-## Important notes
-
-1. Please verify whether `gfmri.nii` and `cfmri.nii` are assigned consistently with the preprocessing description before final release.
-2. In `step5_bold_csf_coupling.m`, CSF signals are extracted from `gfmri.nii`, while cortical gray-matter signals are extracted from `cfmri.nii`.
-3. In `step6_derivative_validation.m`, both CSF and cortical gray-matter signals are extracted from `gfmri.nii`; `cfmri.nii` is checked but not used.
-4. If `gfmri.nii` represents the BOLD-preprocessed image and `cfmri.nii` represents the CSF-edge-slice image, the extraction assignments in Step 5 and Step 6 should be checked carefully.
-
-## Suggested citation wording in Methods
-
-BOLD-CSF coupling was quantified as the cross-correlation between the cortical BOLD signal and the CSF signal across temporal lags. The primary metric used in statistical analyses was derived from the original BOLD-CSF cross-correlation function. Cross-correlation between the negative first-order derivative of the BOLD signal and the CSF signal was calculated only as an auxiliary validation analysis and was not used in downstream statistical models.
-```
