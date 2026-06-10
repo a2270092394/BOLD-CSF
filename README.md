@@ -36,9 +36,6 @@ Step 4. Subject-specific cortical mask generation
 Step 5. BOLD-CSF coupling calculation
             │
             ▼
-Primary statistical analyses
-            │
-            ▼
 Step 6. Derivative-based validation analysis
 ```
 
