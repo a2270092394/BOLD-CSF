@@ -1,21 +1,21 @@
-% 初始化SPM
+% Initialize SPM
 spm('Defaults','fMRI');
 spm_jobman('initcfg');
 
-% 询问使用者spm的路径
-spm_path = uigetdir('', '请选择spm所在文件夹');
+% Prompt user to select the SPM folder
+spm_path = uigetdir('', 'Please select the SPM folder');
 
 TPM_file = fullfile(spm_path, 'tpm', 'TPM.nii');
 
-% 询问使用者数据的文件夹位置
-path = uigetdir('', '请选择数据文件夹');
+% Prompt user to select the data folder
+path = uigetdir('', 'Please select the data folder');
 
-% 询问使用者list.txt的位置
-[list_file, list_path] = uigetfile('*.txt', '请选择list.txt文件');
+% Prompt user to select the list.txt file
+[list_file, list_path] = uigetfile('*.txt', 'Please select the list.txt file');
 list = textread(fullfile(list_path, list_file), '%s');
 
-% 询问使用者要选择的皮层图谱文件
-[gray_matter_mask_file, gray_matter_mask_path] = uigetfile('*.*', '请选择皮层图谱文件');
+% Prompt user to select the cortical mask file
+[gray_matter_mask_file, gray_matter_mask_path] = uigetfile('*.*', 'Please select the cortical mask file');
 
 gray_matter_mask_filename = fullfile(gray_matter_mask_path, gray_matter_mask_file);
 
@@ -49,10 +49,10 @@ for i = 1:length(list)
     matlabbatch{4}.spm.spatial.normalise.write.woptions.vox = [2 2 2];
     matlabbatch{4}.spm.spatial.normalise.write.woptions.interp = 4;
     matlabbatch{4}.spm.spatial.normalise.write.woptions.prefix = 'w';
-    % 运行批处理任务
+    % Run the batch job
     spm_jobman('run', matlabbatch);
 	
-	% 复制文件到目标文件夹
+	% Copy file to destination folder
 	new_filename = sprintf('w%s', gray_matter_mask_file);
     copyfile(fullfile(gray_matter_mask_path, new_filename), fullfile(process_path, 'individual_cortex.nii'));
 end
