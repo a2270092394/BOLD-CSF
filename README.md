@@ -6,7 +6,7 @@ This repository contains the complete pipeline used to quantify coupling between
 
 The pipeline was developed for the study:
 
-**Measures of Brain Fluid Dynamics Associated with Persistence of Post-COVID-19 Brain Fog and Cognitive Impairment**
+**Surrogates of Brain Fluid Dynamics Associated with Persistence of Post-COVID-19 Brain Fog and Cognitive Impairment**
 
 The workflow combines DPABI preprocessing, subject-specific cortical mask generation, BOLD-CSF coupling calculation, and derivative-based validation analyses.
 
@@ -356,7 +356,7 @@ If you use this pipeline, please cite:
 
 Zhou S, Wang Z, Liu X, et al.
 
-Measures of Brain Fluid Dynamics Associated with Persistence of Post-COVID-19 Brain Fog and Cognitive Impairment.
+Surrogates of Brain Fluid Dynamics Associated with Persistence of Post-COVID-19 Brain Fog and Cognitive Impairment.
 
 ---
 
